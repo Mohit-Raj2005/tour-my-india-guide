@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../crop_recommendation_project"
+		},
+		{
+			"path": "../HTML Class"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "IWD PROJECT"
+	}
+}

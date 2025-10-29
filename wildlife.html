@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wildlife Safari Packages | Tour My India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styling consistent with the Homepage */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Consistent Header/Navbar Styles */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #008080;
+        }
+
+        .top-nav {
+            flex-grow: 1;
+            margin: 0 30px;
+        }
+
+        .top-nav a, .contact-actions .action-link {
+            margin: 0 15px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover,
+        .contact-actions .action-link:hover {
+            color: #ff6600;
+        }
+
+        /* Marquee/Alert Section */
+        .top-alert-marquee {
+            background-color: #ff6600; /* Use orange for an urgent alert color */
+            color: #fff;
+            padding: 5px 0;
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .top-alert-marquee marquee {
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: 100%;
+            color: #fff;
+        }
+        
+        /* Main Content Layout */
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero-banner {
+            background: url('wildlife_banner.jpg') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-banner h1 {
+            color: #fff;
+            font-size: 56px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            padding: 20px 40px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+        
+        /* Two-Column Section */
+        .section-two-col {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .col-left {
+            flex: 2;
+        }
+        
+        .col-right {
+            flex: 1;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #008080;
+            margin-bottom: 15px;
+            border-left: 5px solid #ff6600;
+            padding-left: 10px;
+        }
+        
+        /* Table Styling (Required Element) */
+        .safari-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .safari-table th, .safari-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .safari-table thead th {
+            background-color: #008080;
+            color: white;
+            font-weight: 600;
+        }
+
+        .safari-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* List Styling (Required Element) */
+        .sightings-list {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .sightings-list li {
+            background-color: #e6f7f7;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            border-left: 5px solid #ff6600;
+            font-weight: 500;
+        }
+        
+        /* Action Button */
+        .action-button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn-book-safari {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(255, 102, 0, 0.4);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-book-safari:hover {
+            background-color: #e65c00;
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styles (Consistent) */
+        footer {
+            padding-top: 50px;
+        }
+        
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-top: 1px solid #eee;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            color: #ff6600;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="top-alert-marquee">
+        <marquee behavior="scroll" direction="left" scrollamount="6">⚠️ **CONSERVATION ALERT:** The Tiger census begins next month. Please support local wildlife trusts!</marquee>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">TMI (Tour My India)</div>
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link">Home</a> 
+            <a href="destinations.html" class="nav-link">Destinations</a>
+            <a href="holiday_ideas.html" class="nav-link">Holiday Ideas</a>
+            <a href="packages.html" class="nav-link">Packages</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="contact-actions">
+          <a href="destination_wedding.html" class="action-link" >Destination Weddings</a>
+            <span class="action-link">MICE</span>
+        </div>
+    </header>
+
+    <div class="content-container">
+
+        <div class="hero-banner">
+            <h1>India's Wild Heart: Safari Adventures</h1>
+        </div>
+
+        <section class="section-two-col">
+            <div class="col-left">
+                <h2>Current Safari Schedules (Ranthambore)</h2>
+                
+                <table class="safari-table">
+                    <thead>
+                        <tr>
+                            <th>Slot</th>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Duration</th>
+                            <th>Price (INR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Morning 🌄</td>
+                            <td>06:00 - 09:30</td>
+                            <td>Canter (Shared)</td>
+                            <td>3.5 hours</td>
+                            <td>₹ 2,500</td>
+                        </tr>
+                        <tr>
+                            <td>Day 🌞</td>
+                            <td>10:00 - 13:30</td>
+                            <td>Jeep (Private)</td>
+                            <td>3.5 hours</td>
+                            <td>₹ 10,500</td>
+                        </tr>
+                        <tr>
+                            <td>Afternoon 🌅</td>
+                            <td>14:30 - 18:00</td>
+                            <td>Canter (Shared)</td>
+                            <td>3.5 hours</td>
+                            <td>₹ 2,800</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 15px; font-size: 14px; color: #777;">*Prices are per person (shared) or per vehicle (private) and subject to change based on season.</p>
+            </div>
+            
+            <div class="col-right">
+                <h2>Must-See Wildlife 🐾</h2>
+                <p>Check off these incredible animals on your safari trip:</p>
+                
+                <ul class="sightings-list">
+                    <li>Royal Bengal Tiger (Key Attraction)</li>
+                    <li>Indian Leopard</li>
+                    <li>Sloth Bear</li>
+                    <li>Striped Hyena</li>
+                    <li>Sambar Deer</li>
+                    <li>Mugger Crocodile</li>
+                </ul>
+                <p style="margin-top: 20px; color: #ff6600; font-weight: 600;">Always maintain a safe distance and follow your guide's instructions!</p>
+            </div>
+        </section>
+
+        <div class="action-button-container">
+            <a href="contact.html" class="btn-book-safari">Book Your Safari Now</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="bottom-nav">
+            <a href="index.html"><span role="img" aria-label="India Tours">🇮🇳</span> India Tours</a>
+            <a href="destinations.html"><span role="img" aria-label="International Tours">🌍</span> International Tours</a>
+            <a href="destination_wedding.html"><span role="img" aria-label="Destination Wedding">💍</span> Destination Wedding</a>
+        </div>
+    </footer>
+
+</body>
+</html>

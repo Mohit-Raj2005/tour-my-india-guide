@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dream Destination Weddings | Tour My India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styling consistent with the Homepage */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Consistent Header/Navbar Styles */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #008080;
+        }
+
+        .top-nav {
+            flex-grow: 1;
+            margin: 0 30px;
+        }
+
+        .top-nav a, .contact-actions .action-link {
+            margin: 0 15px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover,
+        .contact-actions .action-link:hover {
+            color: #ff6600;
+        }
+
+        /* Marquee/Alert Section */
+        .top-alert-marquee {
+            background-color: #9C27B0; /* Romantic Purple accent */
+            color: #fff;
+            padding: 5px 0;
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .top-alert-marquee marquee {
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: 100%;
+            color: #fff;
+        }
+        
+        /* Main Content Layout */
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 44px;
+            color: #9C27B0; /* Purple accent */
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: #ff6600;
+        }
+        
+        /* Venue Showcase (FIGURE/FIGCAPTION) */
+        .venue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .venue-grid figure {
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .venue-grid figure:hover {
+            transform: translateY(-5px);
+        }
+
+        .venue-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .venue-grid figcaption {
+            padding: 15px;
+            font-weight: 600;
+            color: #008080;
+            font-size: 18px;
+            border-top: 3px solid #ff6600;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #008080;
+            padding-bottom: 5px;
+        }
+
+        /* Planning Steps (LISTS) */
+        .planning-steps {
+            list-style: none; /* Remove default list style */
+            padding: 0;
+            counter-reset: step-counter; /* Initialize counter */
+            margin-bottom: 40px;
+        }
+
+        .planning-steps li {
+            counter-increment: step-counter;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            background-color: #e6f7f7;
+            border-left: 5px solid #ff6600;
+            border-radius: 4px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .planning-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #9C27B0;
+            color: white;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+
+        /* Package Comparison Table (REQUIRED ELEMENT: Table) */
+        .package-comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .package-comparison-table thead th {
+            background-color: #9C27B0;
+            color: white;
+            padding: 12px;
+            font-weight: 600;
+        }
+
+        .package-comparison-table td, .package-comparison-table th {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .package-comparison-table tbody tr:nth-child(even) {
+            background-color: #f2ffef;
+        }
+        
+        /* Action Button (Consistent) */
+        .action-button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn-start-planning {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 35px;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .btn-start-planning:hover {
+            background-color: #e65c00;
+        }
+
+        /* Footer Styles (Consistent) */
+        footer {
+            padding-top: 50px;
+        }
+        
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-top: 1px solid #eee;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            color: #ff6600;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="top-alert-marquee">
+        <marquee behavior="scroll" direction="left" scrollamount="6">💖 **SPECIAL OFFER:** Complimentary photo shoot at any of our top 3 palace venues when you book this month!</marquee>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">TMI (Tour My India)</div>
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link">Home</a> 
+            <a href="destinations.html" class="nav-link">Destinations</a> 
+            <a href="holiday_ideas.html" class="nav-link">Holiday Ideas</a>
+            <a href="packages.html" class="nav-link">Packages</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="contact-actions">
+            <a href="destination_wedding.html" class="action-link" style="color:#9C27B0;">Destination Weddings</a>
+            <span class="action-link">MICE</span>
+        </div>
+    </header>
+
+    <div class="content-container">
+
+        <div class="page-header">
+            <h1>Your Dream Destination Wedding</h1>
+            <p>From majestic palaces in India to serene beaches abroad, we handle every detail.</p>
+        </div>
+        
+        <section>
+            <h2>Featured Romantic Venues</h2>
+            <div class="venue-grid">
+                <figure>
+                    <img src="https://www.dreammakersevent.com/images/blog/wedding-cost-at-taj-jal-mahal-palace.jpg" alt="Palace wedding in Udaipur">
+                    <figcaption>Udaipur Palace: Royalty Awaits</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://th.bing.com/th/id/OIP.W2YiS5JAcPwRTQcAWwQXIgHaDt?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Beach wedding at sunset">
+                    <figcaption>Goa Beachfront: Sunset Ceremonies</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.WKI68CQiQNEcIbKnFeS5PwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mountain wedding in a villa">
+                    <figcaption>Himachal Villa: Scenic Vows</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2>Compare Wedding Packages</h2>
+            <table class="package-comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>The Silver Knot</th>
+                        <th>The Golden Vow</th>
+                        <th>The Diamond Dream</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Guest Count (Max)</td>
+                        <td>50</td>
+                        <td>150</td>
+                        <td>300+</td>
+                    </tr>
+                    <tr>
+                        <td>Accommodation</td>
+                        <td>3-Star Standard</td>
+                        <td>4-Star Premium</td>
+                        <td>5-Star Luxury Suites</td>
+                    </tr>
+                    <tr>
+                        <td>Catering Events</td>
+                        <td>2 (Welcome Dinner, Main Reception)</td>
+                        <td>3 (Sangeet, Haldi, Main Reception)</td>
+                        <td>5+ (Custom Events)</td>
+                    </tr>
+                    <tr>
+                        <td>Decor & Florals</td>
+                        <td>Basic Theme Decor</td>
+                        <td>Mid-Range Custom Decor</td>
+                        <td>High-End, Designer Florals</td>
+                    </tr>
+                    <tr>
+                        <td>Price Estimate (For 100 Guests)</td>
+                        <td>₹ 20 Lacs</td>
+                        <td>₹ 50 Lacs</td>
+                        <td>₹ 1 Crore+</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section>
+            <h2>The 5 Steps to Your Perfect Wedding</h2>
+            <ol class="planning-steps">
+                <li>Initial Consultation & Budget Setting</li>
+                <li>Venue Shortlisting & Virtual Tours</li>
+                <li>Customization of Decor, Menu, and Vendor Selection</li>
+                <li>Guest Logistics, Travel, and Accommodation Management</li>
+                <li>On-Site Coordination & Flawless Execution</li>
+            </ol>
+        </section>
+
+        <div class="action-button-container">
+            <a href="contact.html" class="btn-start-planning">Start Planning Your Wedding Today</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="bottom-nav">
+            <a href="index.html"><span role="img" aria-label="India Tours">🇮🇳</span> India Tours</a>
+            <a href="destinations.html"><span role="img" aria-label="International Tours">🌍</span> International Tours</a>
+            <a href="destination_wedding.html"><span role="img" aria-label="Destination Wedding">💍</span> Destination Wedding</a>
+        </div>
+    </footer>
+
+</body>
+</html>

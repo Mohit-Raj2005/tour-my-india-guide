@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browse All Tour Packages | Tour My India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styling consistent with the Homepage */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Consistent Header/Navbar Styles */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #008080;
+        }
+
+        .top-nav {
+            flex-grow: 1;
+            margin: 0 30px;
+        }
+
+        .top-nav a, .contact-actions .action-link {
+            margin: 0 15px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover,
+        .contact-actions .action-link:hover {
+            color: #ff6600;
+        }
+
+        /* Marquee/Alert Section */
+        .top-alert-marquee {
+            background-color: #008080;
+            color: #fff;
+            padding: 5px 0;
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .top-alert-marquee marquee {
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: 100%;
+            color: #fff;
+        }
+        
+        /* Main Content Layout */
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 44px;
+            color: #008080;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: #ff6600;
+        }
+        
+        /* Package Comparison Table (REQUIRED ELEMENT: Table) */
+        .package-table-wrapper {
+            overflow-x: auto; /* Makes the table scrollable on small screens */
+            margin-bottom: 40px;
+        }
+
+        .package-comparison-table {
+            width: 100%;
+            min-width: 800px; /* Ensures columns don't shrink too much */
+            border-collapse: separate;
+            border-spacing: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .package-comparison-table thead th {
+            background-color: #ff6600;
+            color: white;
+            padding: 20px 10px;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .package-comparison-table tbody th {
+            text-align: left;
+            background-color: #e6f7f7; /* Light background for feature column */
+            font-weight: 600;
+            color: #333;
+            width: 25%;
+        }
+
+        .package-comparison-table td,
+        .package-comparison-table th {
+            border-bottom: 1px solid #eee;
+            padding: 15px 10px;
+            vertical-align: top;
+        }
+
+        .package-comparison-table tbody tr:last-child th,
+        .package-comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Call-to-Action inside Table */
+        .table-cta {
+            background-color: #008080;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .table-cta:hover {
+            background-color: #ff6600;
+        }
+
+        /* Description Element (DETAILS/SUMMARY) */
+        .package-description {
+            margin: 20px 0;
+            padding: 0 10px;
+        }
+        
+        details {
+            margin-bottom: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        summary {
+            font-weight: 600;
+            color: #008080;
+            padding: 15px;
+            cursor: pointer;
+            outline: none;
+            font-size: 18px;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        details[open] > summary {
+            border-bottom: 1px solid #ddd;
+            color: #ff6600;
+        }
+
+        details p {
+            padding: 0 15px 15px 15px;
+            margin: 0;
+            font-size: 15px;
+            color: #555;
+        }
+
+
+        /* Footer Styles (Consistent) */
+        footer {
+            padding-top: 50px;
+        }
+        
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-top: 1px solid #eee;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            color: #ff6600;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="top-alert-marquee">
+        <marquee behavior="scroll" direction="left" scrollamount="6">💰 **PRICE DROP:** Golden Triangle 7-day package reduced by 10% for the next 48 hours only! Book now.</marquee>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">TMI (Tour My India)</div>
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link">Home</a> 
+            <a href="destinations.html" class="nav-link">Destinations</a> 
+            <a href="holiday_ideas.html" class="nav-link">Holiday Ideas</a>
+            <a href="packages.html" class="nav-link">Packages</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="contact-actions">
+            <a href="destination_wedding.html" class="action-link" >Destination Weddings</a>
+            <span class="action-link">MICE</span>
+        </div>
+    </header>
+
+    <div class="content-container">
+
+        <div class="page-header">
+            <h1>Compare Our Best Tour Packages</h1>
+            <p>Find the perfect fit for your budget, duration, and travel style.</p>
+        </div>
+
+        <section class="package-description">
+            <h2>Package Descriptions</h2>
+            <details>
+                <summary>The Grand Explorer Package (Premium)</summary>
+                <p>A comprehensive 14-day tour covering major historical sites, luxury hotels, private transfers, and all meals. Includes internal flights and expert local guides. **Ideal for first-time, high-end travelers.**</p>
+            </details>
+            
+            <details>
+                <summary>The Essentials Route Package (Mid-Range)</summary>
+                <p>A focused 7-day itinerary hitting the must-see destinations. Features 4-star hotels, group transfers, and daily breakfast. **Best value for a quick, comfortable trip.**</p>
+            </details>
+            
+            <details>
+                <summary>The Independent Traveler Package (Budget)</summary>
+                <p>Flexible 5-day option providing accommodation and travel passes only. Meals and activities are self-guided. **Perfect for experienced, budget-conscious backpackers.**</p>
+            </details>
+        </section>
+
+        <section class="package-table-wrapper">
+            <h2>Feature Comparison</h2>
+            <table class="package-comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Grand Explorer</th>
+                        <th>Essentials Route</th>
+                        <th>Independent Traveler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Duration</th>
+                        <td>14 Days / 13 Nights</td>
+                        <td>7 Days / 6 Nights</td>
+                        <td>5 Days / 4 Nights</td>
+                    </tr>
+                    <tr>
+                        <th>Accommodation</th>
+                        <td>5 Star Luxury Hotels</td>
+                        <td>4 Star Comfort Hotels</td>
+                        <td>3 Star Budget Stays</td>
+                    </tr>
+                    <tr>
+                        <th>Meals Included</th>
+                        <td>All Meals (B/L/D)</td>
+                        <td>Breakfast Only (B)</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <th>Transfers</th>
+                        <td>Private Car & Driver</td>
+                        <td>Shared Group Coach</td>
+                        <td>Local Transit Pass Only</td>
+                    </tr>
+                    <tr>
+                        <th>Guided Tours</th>
+                        <td>Private Expert Guide</td>
+                        <td>Group Walking Tours</td>
+                        <td>Self-Guided</td>
+                    </tr>
+                    <tr>
+                        <th>Price (Approx. Per Person)</th>
+                        <td>$4,500 USD</td>
+                        <td>$1,800 USD</td>
+                        <td>$650 USD</td>
+                    </tr>
+                    <tr>
+                        <th>Action</th>
+                        <td><a href="contact.html" class="table-cta">Choose Premium</a></td>
+                        <td><a href="contact.html" class="table-cta" style="background-color: #ff6600;">Choose Value</a></td>
+                        <td><a href="contact.html" class="table-cta">Choose Budget</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="bottom-nav">
+            <a href="index.html"><span role="img" aria-label="India Tours">🇮🇳</span> India Tours</a>
+            <a href="destinations.html"><span role="img" aria-label="International Tours">🌍</span> International Tours</a>
+            <a href="destination_wedding.html"><span role="img" aria-label="Destination Wedding">💍</span> Destination Wedding</a>
+        </div>
+    </footer>
+
+</body>
+</html>

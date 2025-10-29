@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beach & Relaxation Holidays | Tour My India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styling consistent with the Homepage */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Consistent Header/Navbar Styles */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #008080;
+        }
+
+        .top-nav {
+            flex-grow: 1;
+            margin: 0 30px;
+        }
+
+        .top-nav a, .contact-actions .action-link {
+            margin: 0 15px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover,
+        .contact-actions .action-link:hover {
+            color: #ff6600;
+        }
+
+        /* Marquee/Alert Section */
+        .top-alert-marquee {
+            background-color: #0096C7; /* Ocean Blue accent */
+            color: #fff;
+            padding: 5px 0;
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .top-alert-marquee marquee {
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: 100%;
+            color: #fff;
+        }
+        
+        /* Main Content Layout */
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero-banner {
+            background: url('https://th.bing.com/th/id/OIP.ci5YkciVbmyhCQ_tzUcFawHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3') no-repeat center center/cover;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .hero-banner h1 {
+            color: #fff;
+            font-size: 64px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+            margin-bottom: 10px;
+        }
+
+        .hero-banner p {
+            color: #fff;
+            font-size: 22px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        
+        h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ff6600; /* Orange accent */
+            padding-bottom: 5px;
+        }
+        
+        /* Two-Column Section */
+        .beach-sections {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .col-left {
+            flex: 2;
+        }
+        
+        .col-right {
+            flex: 1;
+            background-color: #e6f7f7; /* Light teal background */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Activity List (Required Element: Unordered List) */
+        .activity-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .activity-list li {
+            background-color: #fff;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-left: 4px solid #ff6600;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        /* Resort Comparison Table (Required Element: Table) */
+        .resort-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .resort-table thead th {
+            background-color: #008080; /* Teal accent */
+            color: white;
+            padding: 12px;
+            font-weight: 600;
+        }
+
+        .resort-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .resort-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .resort-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* Action Button (Consistent) */
+        .action-button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn-view-resorts {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .btn-view-resorts:hover {
+            background-color: #e65c00;
+        }
+
+        /* Footer Styles (Consistent) */
+        footer {
+            padding-top: 50px;
+        }
+        
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-top: 1px solid #eee;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            color: #ff6600;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="top-alert-marquee">
+        <marquee behavior="scroll" direction="left" scrollamount="6">☀️ **WEATHER WARNING:** Monsoon advisory for Kerala and Goa is in effect. Book the Maldives for guaranteed sunshine!</marquee>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">TMI (Tour My India)</div>
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link">Home</a> 
+            <a href="destinations.html" class="nav-link">Destinations</a> 
+            <a href="holiday_ideas.html" class="nav-link">Holiday Ideas</a>
+            <a href="packages.html" class="nav-link">Packages</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="contact-actions">
+            <a href="destination_wedding.html" class="action-link" >Destination Weddings</a>
+            <span class="action-link">MICE</span>
+            <a href="weekend_getaways.html" class="action-link">Weekend Getaways</a>
+        </div>
+    </header>
+
+    <div class="content-container">
+
+        <div class="hero-banner">
+            <h1>Sun, Sand, and Serenity</h1>
+            <p>Unwind on the world's most pristine beaches and private islands.</p>
+        </div>
+
+        <section class="beach-sections">
+            <div class="col-left">
+                <h2>Featured All-Inclusive Beach Resorts</h2>
+                <table class="resort-table">
+                    <thead>
+                        <tr>
+                            <th>Resort</th>
+                            <th>Private Beach</th>
+                            <th>All-Inclusive</th>
+                            <th>Water Sports</th>
+                            <th>Starting Price (per night)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>The Blue Lagoon, Maldives</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes (Free Kayak)</td>
+                            <td>$650 USD</td>
+                        </tr>
+                        <tr>
+                            <td>Goa Sunset Retreat, India</td>
+                            <td>No (Public access)</td>
+                            <td>No</td>
+                            <td>Yes (Paid)</td>
+                            <td>$150 USD</td>
+                        </tr>
+                        <tr>
+                            <td>Andaman Pearl Resort, India</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>$280 USD</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 20px;">*Prices based on standard double occupancy during off-peak season.</p>
+            </div>
+            
+            <div class="col-right">
+                <h2>Must-Try Relaxation Activities</h2>
+                <ul class="activity-list">
+                    <li>🌅 Sunset Yoga on the Sand</li>
+                    <li>🥥 Tropical Cocktail Mixology Class</li>
+                    <li>💆‍♂️ Couples Spa Treatment</li>
+                    <li>📖 Reading in a Hammock</li>
+                    <li>🍽️ Private Beach Dinner</li>
+                    <li>🧘 Deep Sea Meditation</li>
+                </ul>
+                <p style="margin-top: 25px; color: #008080; font-weight: 600;">Let the sound of the waves melt your stress away!</p>
+            </div>
+        </section>
+
+        <div class="action-button-container">
+            <a href="contact.html" class="btn-view-resorts">View All Beach Resort Deals</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="bottom-nav">
+            <a href="index.html"><span role="img" aria-label="India Tours">🇮🇳</span> India Tours</a>
+            <a href="destinations.html"><span role="img" aria-label="International Tours">🌍</span> International Tours</a>
+            <a href="destination_wedding.html"><span role="img" aria-label="Destination Wedding">💍</span> Destination Wedding</a>
+        </div>
+    </footer>
+
+</body>
+</html>

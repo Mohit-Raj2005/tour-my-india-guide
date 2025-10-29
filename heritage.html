@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heritage Tours | Palaces, Forts & History</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styling consistent with the Homepage */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Consistent Header/Navbar Styles */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #008080;
+        }
+
+        .top-nav {
+            flex-grow: 1;
+            margin: 0 30px;
+        }
+
+        .top-nav a, .contact-actions .action-link {
+            margin: 0 15px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover,
+        .contact-actions .action-link:hover {
+            color: #ff6600;
+        }
+
+        /* Marquee/Alert Section */
+        .top-alert-marquee {
+            background-color: #008080; 
+            color: #fff;
+            padding: 5px 0;
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .top-alert-marquee marquee {
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: 100%;
+            color: #fff;
+        }
+        
+        /* Main Content Layout */
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            color: #008080;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: #ff6600;
+        }
+        
+        /* Image Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ff6600;
+            padding-bottom: 5px;
+        }
+        
+        /* Site Table Styling (Required Element) */
+        .site-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            margin-bottom: 40px;
+        }
+
+        .site-table th, .site-table td {
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        .site-table thead th {
+            background-color: #008080;
+            color: white;
+            font-weight: 600;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .site-table tbody tr {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.2s;
+        }
+
+        .site-table tbody tr:hover {
+            background-color: #e6f7f7;
+        }
+
+        /* Details/Summary (Alternative List Element) */
+        .history-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        details {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+
+        summary {
+            font-weight: 600;
+            color: #ff6600;
+            cursor: pointer;
+            outline: none;
+            padding: 5px 0;
+        }
+
+        details p {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-top: 1px dashed #eee;
+        }
+        
+        /* Action Button (Consistent) */
+        .action-button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn-request-info {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .btn-request-info:hover {
+            background-color: #e65c00;
+        }
+
+        /* Footer Styles (Consistent) */
+        footer {
+            padding-top: 50px;
+        }
+        
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-top: 1px solid #eee;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            color: #ff6600;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="top-alert-marquee">
+        <marquee behavior="scroll" direction="left" scrollamount="6">🏛️ **SPECIAL OFFER:** Get 15% off any Rajasthan Heritage Tour booked this month!</marquee>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">TMI(Tour My India)</div>
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link">Home</a> 
+            <a href="destinations.html" class="nav-link">Destinations</a>
+            <a href="holiday_ideas.html" class="nav-link">Holiday Ideas</a>
+            <a href="packages.html" class="nav-link">Packages</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="contact-actions">
+           <a href="destination_wedding.html" class="action-link" >Destination Weddings</a>
+            <span class="action-link">MICE</span>
+        </div>
+    </header>
+
+    <div class="content-container">
+
+        <div class="page-header">
+            <h1>India's Royal Heritage: Forts & Palaces</h1>
+            <p>Journey through the ages and explore the legendary monuments of India.</p>
+        </div>
+
+        <section>
+            <h2>Featured Heritage Sites</h2>
+            <div class="gallery">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.My8H8DHrNwnVOv-dMt588QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Amber Fort, Jaipur">
+                <img src="https://th.bing.com/th/id/OIP.ef6ptHez0DI9hboSbYf3kgHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Hampi Ruins, Karnataka">
+                <img src="https://th.bing.com/th/id/OIP.8CWFuiZHSTpC3yzRWx0nuwHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Red Fort, Delhi">
+            </div>
+        </section>
+
+        <section>
+            <h2>UNESCO World Heritage Destinations</h2>
+            <table class="site-table">
+                <thead>
+                    <tr>
+                        <th>Site Name</th>
+                        <th>State/Region</th>
+                        <th>Primary Highlight</th>
+                        <th>Year Listed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Taj Mahal</td>
+                        <td>Uttar Pradesh</td>
+                        <td>Mughal Architecture, White Marble Mausoleum</td>
+                        <td>1983</td>
+                    </tr>
+                    <tr>
+                        <td>Hampi</td>
+                        <td>Karnataka</td>
+                        <td>Vijayanagara Empire Ruins</td>
+                        <td>1986</td>
+                    </tr>
+                    <tr>
+                        <td>Qutub Minar</td>
+                        <td>Delhi</td>
+                        <td>Indo-Islamic Architecture, Tallest Minaret</td>
+                        <td>1993</td>
+                    </tr>
+                    <tr>
+                        <td>Ellora Caves</td>
+                        <td>Maharashtra</td>
+                        <td>Rock-cut Architecture, Buddhist, Hindu & Jain Temples</td>
+                        <td>1983</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section>
+            <h2>Essential Heritage Travel Tips</h2>
+            <div class="history-details">
+                <details>
+                    <summary>Best Time to Visit Heritage Sites</summary>
+                    <p>The winter months (October to March) offer the most pleasant weather for exploring forts and temples, especially in North and Central India.</p>
+                </details>
+                
+                <details>
+                    <summary>What to Pack for Cultural Tours</summary>
+                    <p>Comfortable walking shoes, a wide-brimmed hat, sunscreen, and modest clothing (especially when visiting active temples or mosques) are essential.</p>
+                </details>
+
+                <details>
+                    <summary>Photography & Drone Rules</summary>
+                    <p>Photography is often restricted inside certain temples or tombs. Drones are strictly banned at many UNESCO World Heritage sites. Always check official signage.</p>
+                </details>
+            </div>
+        </section>
+
+
+        <div class="action-button-container">
+            <a href="contact.html" class="btn-request-info">Request Custom Heritage Itinerary</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="bottom-nav">
+            <a href="index.html"><span role="img" aria-label="India Tours">🇮🇳</span> India Tours</a>
+            <a href="destinations.html"><span role="img" aria-label="International Tours">🌍</span> International Tours</a>
+            <a href="destination_wedding.html"><span role="img" aria-label="Destination Wedding">💍</span> Destination Wedding</a>
+        </div>
+    </footer>
+
+</body>
+</html>

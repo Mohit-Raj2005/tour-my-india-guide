@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visit Tokyo: Future Meets Tradition | Tour My India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styling consistent with the Homepage */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Consistent Header/Navbar Styles */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #008080;
+        }
+
+        .top-nav {
+            flex-grow: 1;
+            margin: 0 30px;
+        }
+
+        .top-nav a, .contact-actions .action-link {
+            margin: 0 15px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover,
+        .contact-actions .action-link:hover {
+            color: #ff6600;
+        }
+
+        /* Marquee/Alert Section */
+        .top-alert-marquee {
+            background-color: #C00000; /* Red/Maroon for Japan accent */
+            color: #fff;
+            padding: 5px 0;
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .top-alert-marquee marquee {
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: 100%;
+            color: #fff;
+        }
+        
+        /* Main Content Layout */
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+         .city-header {
+            background: url('https://wallpapercave.com/wp/wp8438092.jpg') no-repeat center center/cover;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .city-header h1 {
+            color: #fff;
+            font-size: 64px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+            margin-bottom: 10px;
+        }
+
+        .city-header p {
+            color: #fff;
+            font-size: 22px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Section Heading */
+        h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ff6600; /* Orange accent */
+            padding-bottom: 5px;
+        }
+        
+        /* Two-Column Section */
+        .city-sections {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .col-main {
+            flex: 2;
+        }
+        
+        .col-sidebar {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Itinerary List (Required Element: Definition List) */
+        .itinerary-list-dl {
+            margin-top: 15px;
+        }
+        
+        .itinerary-list-dl dt {
+            font-weight: 700;
+            color: #008080;
+            margin-top: 15px;
+            font-size: 18px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 5px;
+        }
+        
+        .itinerary-list-dl dd {
+            margin-left: 0;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* Experience Comparison Table (Required Element: Table) */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .comparison-table thead th {
+            background-color: #008080;
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* Action Button (Consistent) */
+        .action-button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn-book-tour {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .btn-book-tour:hover {
+            background-color: #e65c00;
+        }
+
+        /* Footer Styles (Consistent) */
+        footer {
+            padding-top: 50px;
+        }
+        
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-top: 1px solid #eee;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            color: #ff6600;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="top-alert-marquee">
+        <marquee behavior="scroll" direction="left" scrollamount="8">🌸 **SAKURA SEASON ALERT:** Cherry Blossom forecast released for next spring! Book fast for peak viewing dates!</marquee>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">TMI (Tour My India)</div>
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link">Home</a> 
+            <a href="destinations.html" class="nav-link">Destinations</a> 
+            <a href="holiday_ideas.html" class="nav-link">Holiday Ideas</a>
+            <a href="packages.html" class="nav-link">Packages</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="contact-actions">
+            <a href="destination_wedding.html" class="action-link">Destination Weddings</a>
+            <span class="action-link">MICE</span>
+        </div>
+    </header>
+
+    <div class="content-container">
+
+        <div class="city-header">
+            <h1>Tokyo: Where Future Meets Tradition</h1>
+            <p>Experience the electric energy of Shibuya and the serenity of ancient shrines.</p>
+        </div>
+
+        <section class="city-sections">
+            <div class="col-main">
+                <h2>Suggested 4-Day Tokyo Itinerary</h2>
+                <dl class="itinerary-list-dl">
+                    <dt>Day 1: Modern Icons</dt>
+                    <dd>Witness the Shibuya Scramble Crossing, enjoy the view from Shibuya Sky, and explore the trendy streets of Harajuku (Takeshita Street).</dd>
+                    
+                    <dt>Day 2: Culture & History</dt>
+                    <dd>Start at the ancient Sensoji Temple and Nakamise-dori in Asakusa. In the afternoon, visit the serene Meiji Jingu Shrine and Yoyogi Park.</dd>
+                    
+                    <dt>Day 3: Tech & Entertainment</dt>
+                    <dd>Dive into the neon chaos of Akihabara Electric Town for anime and gaming. In the evening, explore the nightlife and robot-themed dining of Shinjuku.</dd>
+                    
+                    <dt>Day 4: Art & Relaxation</dt>
+                    <dd>Visit the digital wonders of teamLab Planets (or Borderless) and relax in the beautiful Shinjuku Gyoen National Garden.</dd>
+                </dl>
+                <p style="margin-top: 30px;">**Transportation Tip:** Purchase a Suica or Pasmo card for easy travel on the dense subway system.</p>
+            </div>
+            
+            <div class="col-sidebar">
+                <h2>Tokyo Tower vs. Skytree</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Tokyo Tower</th>
+                            <th>Tokyo Skytree</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Height (m)</td>
+                            <td>333m</td>
+                            <td>634m (Japan's Tallest)</td>
+                        </tr>
+                        <tr>
+                            <td>Best View</td>
+                            <td>City landmarks, close-up of Tokyo Tower</td>
+                            <td>Panoramic, clear view of Mt. Fuji on good days</td>
+                        </tr>
+                        <tr>
+                            <td>Vibe</td>
+                            <td>Classic, Retro</td>
+                            <td>Modern, Futuristic</td>
+                        </tr>
+                        <tr>
+                            <td>Main Area</td>
+                            <td>Roppongi/Shiba Park</td>
+                            <td>Sumida/Asakusa</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 20px; font-size: 14px; color: #777;">Decide based on whether you prefer classic charm or breathtaking height!</p>
+            </div>
+        </section>
+
+        <div class="action-button-container">
+            <a href="contact.html" class="btn-book-tour">Book Your Custom Japan Itinerary</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="bottom-nav">
+            <a href="index.html"><span role="img" aria-label="India Tours">🇮🇳</span> India Tours</a>
+            <a href="destinations.html"><span role="img" aria-label="International Tours">🌍</span> International Tours</a>
+            <a href="destination_wedding.html"><span role="img" aria-label="Destination Wedding">💍</span> Destination Wedding</a>
+        </div>
+    </footer>
+
+</body>
+</html>

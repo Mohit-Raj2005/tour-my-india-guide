@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Tour My India | TMI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styling consistent with the Homepage */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Consistent Header/Navbar Styles */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #008080; /* Teal/Brand Color */
+        }
+
+        .top-nav {
+            flex-grow: 1;
+            margin: 0 30px;
+        }
+
+        .top-nav a, .contact-actions .action-link {
+            margin: 0 15px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover,
+        .contact-actions .action-link:hover {
+            color: #ff6600; /* Orange Highlight */
+        }
+        
+        /* About Page Specific Layout */
+        .about-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 40px 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-container h1 {
+            font-size: 36px;
+            color: #008080;
+            border-bottom: 3px solid #ff6600;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        /* Mission and Vision Section */
+        .mission-vision {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .mission, .vision {
+            flex: 1;
+            padding: 20px;
+            border-left: 5px solid #ff6600;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .mission h2, .vision h2 {
+            font-size: 24px;
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+        
+        /* Core Values (List Element Requirement) */
+        .core-values h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .core-values ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .core-values li {
+            background-color: #e6f7f7;
+            padding: 15px;
+            border-radius: 6px;
+            flex: 1 1 calc(33% - 40px); /* 3 items per row on large screens */
+            min-width: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            font-weight: 500;
+            color: #008080;
+        }
+        
+        /* Footer Styles (Consistent) */
+        footer {
+            padding: 30px 0;
+        }
+        
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-top: 1px solid #eee;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            color: #ff6600;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="top-alert-marquee" style="background-color: #008080; color: #fff; padding: 5px 0; font-size: 14px; overflow: hidden; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <marquee behavior="scroll" direction="left" scrollamount="6" style="padding: 0; margin: 0; display: block; width: 100%; color: #fff;">✨ Latest Travel News: Monsoon packages now available for Kerala and Goa! Book today for 20% off. ✨</marquee>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">TMI (Tour My India)</div>
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link">Home</a> 
+            <a href="destinations.html" class="nav-link">Destinations</a>
+            <a href="holiday_ideas.html" class="nav-link">Holiday Ideas</a>
+            <a href="packages.html" class="nav-link">Packages</a>
+            <a href="places_to_stay.html" class="nav-link">Places to Stay</a>
+        </nav>
+        <div class="contact-actions">
+            <a href="destination_wedding.html" class="action-link" >Destination Weddings</a>
+            <span class="action-link">MICE</span>
+        </div>
+    </header>
+
+    <section class="about-container">
+        <h1>About Tour My India (TMI)</h1>
+
+        <p>Welcome to **Tour My India**—your trusted partner in crafting unforgettable travel experiences since 2010. We specialize in custom-tailored tours across India and select international destinations, driven by a passion for exploration and dedicated service.</p>
+        <br>
+        <p>Our team of local experts brings deep knowledge and insider access to ensure every trip is unique, seamless, and authentically enriching. We handle all the details, from complex itineraries and local transport to handpicked accommodations and expert guides, so you can focus entirely on your adventure.</p>
+        
+        <br>
+        <div class="mission-vision">
+            <div class="mission">
+                <h2>Our Mission 🗺️</h2>
+                <p>To provide unparalleled, high-quality travel solutions that promote sustainable tourism and deliver culturally immersive, safe, and personalized journeys for every client.</p>
+            </div>
+            <div class="vision">
+                <h2>Our Vision ✨</h2>
+                <p>To be the most preferred and innovative travel company in India, recognized globally for excellence in service and commitment to responsible travel practices.</p>
+            </div>
+        </div>
+        
+        <div class="core-values">
+            <h2>Our Core Values</h2>
+            <ul>
+                <li>Integrity & Trust</li>
+                <li>Customer-Centricity</li>
+                <li>Local Expertise</li>
+                <li>Innovation in Travel</li>
+                <li>Safety First</li>
+                <li>Sustainability</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="bottom-nav">
+            <a href="index.html"><span role="img" aria-label="India Tours">🇮🇳</span> India Tours</a>
+            <a href="destinations.html"><span role="img" aria-label="International Tours">🌍</span> International Tours</a>
+            <a href="destination_wedding.html"><span role="img" aria-label="Destination Wedding">💍</span> Destination Wedding</a>
+        </div>
+    </footer>
+
+</body>
+</html>

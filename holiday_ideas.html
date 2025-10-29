@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Holiday Ideas & Themes | Tour My India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styling consistent with the Homepage */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Consistent Header/Navbar Styles */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #008080;
+        }
+
+        .top-nav {
+            flex-grow: 1;
+            margin: 0 30px;
+        }
+
+        .top-nav a, .contact-actions .action-link {
+            margin: 0 15px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover,
+        .contact-actions .action-link:hover {
+            color: #ff6600;
+        }
+
+        /* Marquee/Alert Section */
+        .top-alert-marquee {
+            background-color: #ff6600; /* Orange accent */
+            color: #fff;
+            padding: 5px 0;
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .top-alert-marquee marquee {
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: 100%;
+            color: #fff;
+        }
+        
+        /* Main Content Layout */
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            background-color: #e6f7f7;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 44px;
+            color: #008080;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: #555;
+        }
+        
+        /* Idea Cards Grid */
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .idea-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #ff6600; /* Orange top border accent */
+        }
+        
+        /* Figure and Figcaption (Required Element) */
+        .idea-card figure {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .idea-card figure img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .idea-card figcaption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h2 {
+            font-size: 28px;
+            color: #ff6600;
+            margin-bottom: 15px;
+        }
+        
+        /* Definition List (Required Element: dl, dt, dd) */
+        .package-details {
+            margin-top: 15px;
+        }
+
+        .package-details dt {
+            font-weight: 700;
+            color: #008080;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .package-details dd {
+            margin-left: 0;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 3px solid #f0f0f0;
+        }
+
+        .action-link-button {
+            display: inline-block;
+            background-color: #008080;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .action-link-button:hover {
+            background-color: #005f5f;
+        }
+
+        /* Footer Styles (Consistent) */
+        footer {
+            padding-top: 50px;
+        }
+        
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-top: 1px solid #eee;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            color: #ff6600;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="top-alert-marquee">
+        <marquee behavior="scroll" direction="left" scrollamount="6">💖 **NEW THEME:** Explore our brand new Family & Solo Gateweay collection for special discounts!</marquee>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">TMI (Tour My India)</div>
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link">Home</a> 
+            <a href="destinations.html" class="nav-link">Destinations</a> 
+            <a href="holiday_ideas.html" class="nav-link">Holiday Ideas</a>
+            <a href="packages.html" class="nav-link">Packages</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="contact-actions">
+            <a href="destination_wedding.html" class="action-link" >Destination Weddings</a>
+            <span class="action-link">MICE</span>
+        </div>
+    </header>
+
+    <div class="content-container">
+
+        <div class="page-header">
+            <h1>Find Your Perfect Holiday Idea</h1>
+            <p>From adrenaline rushes to quiet contemplation, we have a theme for every traveler.</p>
+        </div>
+
+        <div class="ideas-grid">
+
+            <div class="idea-card">
+                <figure>
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.2XopVoNRAeRG8HEjNMqVswHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Luxury resort pool with a view">
+                    <figcaption>The ultimate in comfort and curated experiences.</figcaption>
+                </figure>
+                <div class="card-content">
+                    <h2>Luxury & Relaxation 🥂</h2>
+                    <p>Indulge in five-star resorts, private villas, and bespoke dining. Zero stress, maximum pampering.</p>
+                    
+                    <dl class="package-details">
+                        <dt>Key Destinations</dt>
+                        <dd>Maldives, Udaipur (India), Swiss Alps</dd>
+                        <dt>Trip Duration</dt>
+                        <dd>5 to 14 Days</dd>
+                    </dl>
+                    <a href="contact.html" class="action-link-button">Request Luxury Quote</a>
+                </div>
+            </div>
+
+            <div class="idea-card">
+                <figure>
+                    <img src="https://th.bing.com/th/id/R.4959dd5e8dcff3e9eaf9be407d58d86f?rik=qHrahHwDiiq1Wg&riu=http%3a%2f%2fak1.picdn.net%2fshutterstock%2fvideos%2f966301%2fthumb%2f1.jpg&ehk=4sv8s1IglEUlLb1KcJcpL6SzP4Y5amt6t4yIQo1Pr1s%3d&risl=&pid=ImgRaw&r=0" alt="Family playing on a sunny beach">
+                    <figcaption>Adventures designed to delight all ages.</figcaption>
+                </figure>
+                <div class="card-content">
+                    <h2>Family Fun & Adventure 👨‍👩‍👧‍👦</h2>
+                    <p>Safe, engaging, and educational tours with kid-friendly itineraries and accommodations.</p>
+                    
+                    <dl class="package-details">
+                        <dt>Key Destinations</dt>
+                        <dd>Disneyland, Kerala Houseboats, Goa Beaches</dd>
+                        <dt>Trip Duration</dt>
+                        <dd>7 to 10 Days</dd>
+                    </dl>
+                    <a href="contact.html" class="action-link-button">View Family Packages</a>
+                </div>
+            </div>
+
+            <div class="idea-card">
+                <figure>
+                    <img src="https://img.freepik.com/premium-photo/woman-doing-yoga-mountain-sunset_250469-19816.jpg" alt="Yoga session overlooking mountains">
+                    <figcaption>Find peace and rejuvenation in serene locations.</figcaption>
+                </figure>
+                <div class="card-content">
+                    <h2>Spiritual & Wellness 🧘</h2>
+                    <p>Yoga retreats, temple tours, and detoxifying escapes in the mountains and on the coast.</p>
+                    
+                    <dl class="package-details">
+                        <dt>Key Destinations</dt>
+                        <dd>Rishikesh, McLeod Ganj, Auroville</dd>
+                        <dt>Trip Duration</dt>
+                        <dd>3 to 7 Days</dd>
+                    </dl>
+                    <a href="contact.html" class="action-link-button">Explore Wellness</a>
+                </div>
+            </div>
+            
+            </div>
+
+    </div>
+
+    <footer>
+        <div class="bottom-nav">
+            <a href="index.html"><span role="img" aria-label="India Tours">🇮🇳</span> India Tours</a>
+            <a href="destinations.html"><span role="img" aria-label="International Tours">🌍</span> International Tours</a>
+            <a href="destination_wedding.html"><span role="img" aria-label="Destination Wedding">💍</span> Destination Wedding</a>
+        </div>
+    </footer>
+
+</body>
+</html>

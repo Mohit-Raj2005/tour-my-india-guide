@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Paris: City of Lights Guide | Tour My India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styling consistent with the Homepage */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Consistent Header/Navbar Styles */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #008080;
+        }
+
+        .top-nav {
+            flex-grow: 1;
+            margin: 0 30px;
+        }
+
+        .top-nav a, .contact-actions .action-link {
+            margin: 0 15px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover,
+        .contact-actions .action-link:hover {
+            color: #ff6600;
+        }
+
+        /* Marquee/Alert Section */
+        .top-alert-marquee {
+            background-color: #A00000; /* Deep Red for Parisian elegance/alert */
+            color: #fff;
+            padding: 5px 0;
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .top-alert-marquee marquee {
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: 100%;
+            color: #fff;
+        }
+        
+        /* Main Content Layout */
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .city-header {
+            background: url('paris_banner.jpg') no-repeat center center/cover;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .city-header {
+            background: url('https://tse1.mm.bing.net/th/id/OIP.Ap0-vjaX8BTJUsvgAMTvawHaFO?rs=1&pid=ImgDetMain&o=7&rm=3') no-repeat center center/cover;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .city-header p {
+            color: #fff;
+            font-size: 22px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Section Heading */
+        h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #008080; /* Teal accent */
+            padding-bottom: 5px;
+        }
+        
+        /* Two-Column Section */
+        .city-sections {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .col-main {
+            flex: 2;
+        }
+        
+        .col-sidebar {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Itinerary List (Required Element: Ordered List) */
+        .itinerary-list {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        .itinerary-list li {
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            color: #555;
+        }
+
+        .itinerary-list li strong {
+            color: #008080;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Hotel Comparison Table (Required Element: Table) */
+        .hotel-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .hotel-table th, .hotel-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .hotel-table thead th {
+            background-color: #ff6600; /* Orange Accent */
+            color: white;
+            font-weight: 600;
+        }
+
+        .hotel-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* Action Button (Consistent) */
+        .action-button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn-book-tour {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .btn-book-tour:hover {
+            background-color: #e65c00;
+        }
+
+        /* Footer Styles (Consistent) */
+        footer {
+            padding-top: 50px;
+        }
+        
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-top: 1px solid #eee;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            color: #ff6600;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="top-alert-marquee">
+        <marquee behavior="scroll" direction="left" scrollamount="6">🇫🇷 **EVENT ALERT:** The Louvre is offering extended evening hours this week. Book your tickets in advance!</marquee>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">TMI(Tour My India)</div>
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link">Home</a> 
+            <a href="destinations.html" class="nav-link">Destinations</a> 
+            <a href="holiday_ideas.html" class="nav-link">Holiday Ideas</a>
+            <a href="packages.html" class="nav-link">Packages</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="contact-actions">
+           <a href="destination_wedding.html" class="action-link" >Destination Weddings</a>
+            <span class="action-link">MICE</span>
+        </div>
+    </header>
+
+    <div class="content-container">
+
+        <div class="city-header">
+            <h1>Paris: The City of Lights</h1>
+            <p>Romantic history, iconic art, and unforgettable cuisine await you.</p>
+        </div>
+
+        <section class="city-sections">
+            <div class="col-main">
+                <h2>Suggested 3-Day Paris Itinerary</h2>
+                <ol class="itinerary-list">
+                    <li>
+                        <strong>Day 1: Iconic Landmarks</strong>
+                        Visit the Eiffel Tower, walk the Champs-Élysées, climb the Arc de Triomphe, and take an evening Seine River cruise.
+                    </li>
+                    <li>
+                        <strong>Day 2: Art and History</strong>
+                        Spend the morning at the Louvre Museum (see the Mona Lisa!), relax in the Tuileries Garden, and explore the impressionist works at Musée d'Orsay.
+                    </li>
+                    <li>
+                        <strong>Day 3: Bohemian Charm & Palaces</strong>
+                        Explore the artists' quarter of Montmartre and Sacré-Cœur, then take a day trip to the opulent Palace of Versailles.
+                    </li>
+                    <li>
+                        <strong>Food Tip:</strong> Don't forget to grab a fresh croissant at a local *boulangerie* every morning!
+                    </li>
+                </ol>
+                <p style="margin-top: 30px;">**Pro Tip:** Purchase a Paris Museum Pass to save time and money on entrance fees to top attractions!</p>
+            </div>
+            
+            <div class="col-sidebar">
+                <h2>Hotels by Neighborhood</h2>
+                <table class="hotel-table">
+                    <thead>
+                        <tr>
+                            <th>Hotel Name</th>
+                            <th>Rating</th>
+                            <th>Starting Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hotel Grand Pouchon</td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td>€ 280 / night</td>
+                        </tr>
+                        <tr>
+                            <td>Le Petit Fleur Hostel</td>
+                            <td>⭐</td>
+                            <td>€ 65 / night</td>
+                        </tr>
+                        <tr>
+                            <td>Saint-Germain Suite</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td>€ 450 / night</td>
+                        </tr>
+                        <tr>
+                            <td>Montmartre Inn</td>
+                            <td>⭐⭐⭐</td>
+                            <td>€ 150 / night</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 20px; font-size: 14px; color: #777;">*Prices are estimated averages for the peak season.</p>
+            </div>
+        </section>
+
+        <div class="action-button-container">
+            <a href="contact.html" class="btn-book-tour">Book Your Complete Paris Tour Package</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="bottom-nav">
+            <a href="index.html"><span role="img" aria-label="India Tours">🇮🇳</span> India Tours</a>
+            <a href="destinations.html"><span role="img" aria-label="International Tours">🌍</span> International Tours</a>
+            <a href="destination_wedding.html"><span role="img" aria-label="Destination Wedding">💍</span> Destination Wedding</a>
+        </div>
+    </footer>
+
+</body>
+</html>

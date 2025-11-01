@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>🇮🇳 Curated Arts & Culture Tours</title>
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+     
+            h1 {
+                /* Your original h1 styles... */
+                color:  #ff6600;
+                /* Example text color */
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            }
+        
+
+        p {
+            color: #666;
+        }
+
+        .monument-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+            justify-content: center;
+        }
+
+        .monument-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            /* For better internal layout */
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .monument-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .monument-card img {
+            max-width: 100%;
+            height: 180px;
+            /* Fixed height for consistency */
+            object-fit: cover;
+            /* Ensures image covers the area without distortion */
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .monument-card h3 {
+            color: #ff6600;
+            /* Indigo */
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .monument-card p {
+            font-size: 0.9em;
+            color: #555;
+            flex-grow: 1;
+            /* Allows description to take available space */
+        }
+
+        .monument-card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #ff6600;
+            /* Green */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .monument-card a:hover {
+            background-color: #ff6600;
+        }
+    </style> -->
+    <style>
+    body {
+        font-family: sans-serif; /* Use a clean font */
+        text-align: center;
+        margin: 20px;
+        background-color: #FFFFFF; /* Clean white background */
+    }
+    h1 {
+        /* Matches the deep blue color of the main text */
+        color: #333366; 
+        font-size: 2.5em; 
+        margin-bottom: 10px;
+    }
+    p {
+        color: #666;
+    }
+    .monument-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 30px auto;
+        justify-content: center;
+    }
+    /* --- Card Styling to Match Theme --- */
+    .monument-card {
+        border: none; /* Remove border for a cleaner look */
+        border-radius: 8px;
+        padding: 15px;
+        background-color: white;
+        /* Subtle shadow similar to the package cards in the screenshot */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .monument-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Deeper shadow on hover */
+    }
+    .monument-card img {
+        max-width: 100%;
+        height: 180px; 
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    .monument-card h3 {
+        /* Matches the secondary (package count) color */
+        color: #FF6600; 
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+    }
+    .monument-card p {
+        font-size: 0.9em;
+        color: #555;
+        flex-grow: 1;
+    }
+    .monument-card a {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 15px;
+        /* Uses the secondary orange accent color */
+        background-color: #FF6600; 
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.2s;
+    }
+    .monument-card a:hover {
+        background-color: #e55c00; /* Slightly darker orange on hover */
+    }
+
+
+
+footer {
+            padding-top: 50px;
+        }
+                .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-top: 1px solid #eee;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            color: #ff6600;
+        }
+
+
+    
+    /* Reset and Typography */
+  
+    /* === 1. TOP PROMOTIONAL BAR (Orange) === */
+    .top-promo-bar {
+        background-color: #FF6600; /* Bright Orange color */
+        color: white;
+        text-align: right;
+        padding: 5px 20px;
+        font-size: 0.85em;
+        font-weight: bold;
+    }
+    .top-promo-bar strong {
+        color: #ffc0cb; /* Pink/Accent for "NEW THEME" */
+    }
+
+    /* === 2. MAIN HEADER STRUCTURE === */
+    .main-header {
+        display: flex;
+        align-items: center; /* Vertically align logo and nav */
+        padding: 10px 20px;
+        border-bottom: 1px solid #eee; /* Subtle separator */
+    }
+    
+    /* Logo Styling (TMI-like) */
+    .logo-container {
+        flex-shrink: 0; /* Prevents logo from shrinking */
+        margin-right: 40px;
+        text-align: left;
+    }
+    .logo-container h2 {
+        font-size: 1.8em;
+        color: #008080; /* Teal/Deep Turquoise color from screenshot */
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    /* Navigation Styling */
+    .navbar {
+        display: flex;
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: flex-start; /* Align links to the left */
+        flex-grow: 1; /* Allows navigation to take remaining space */
+    }
+    .navbar-row {
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        gap: 20px; /* Space between links */
+    }
+    .navbar-row a {
+        color: #555; /* Dark gray for standard links */
+        text-decoration: none;
+        font-size: 0.95em;
+        font-weight: bold;
+        white-space: nowrap;
+        transition: color 0.2s;
+    }
+    .navbar-row a:hover, .navbar-row a.active {
+        color: #FF6600; /* Bright Orange highlight */
+    }
+
+    /* === PAGE CONTENT STYLES (Kept from previous step) === */
+    h1 {
+        color: #333366; 
+        font-size: 2.5em; 
+        margin-top: 30px;
+    }
+    /* ...rest of the card/grid styles here... */
+
+</style>
+</head>
+
+<body>
+
+   <div class="main-header">
+        
+        <div class="logo-container">
+            <h2>TMI (Tour My<br>India)</h2>
+        </div>
+        
+        <nav class="navbar">
+            <div class="navbar-row">
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a> 
+                <a href="holiday_ideas.html">Holiday Ideas</a> 
+                <a href="virtualtour.html">Virtual Tour</a>
+                <a href="packages.html">Packages</a>
+                 <a href="places_to_stay.html">Places to Stay</a>
+                 <a href="weekend_getaways.html">Weekend Getaways</a>
+            
+                
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+               
+                
+            </div>
+        </nav>
+    </div>
+
+
+
+    <h1>Select a Monument for a Curated Tour</h1>
+    <p>Explore the history and art of India's heritage sites through high-quality exhibits.</p>
+
+    <div class="monument-grid">
+
+        <div class="monument-card">
+            <h3>Taj Mahal, Agra</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/800px-Taj_Mahal_%28Edited%29.jpeg"
+                alt="Taj Mahal">
+            <p>A masterpiece of Mughal architecture and eternal love, renowned for its perfect symmetry and intricate
+                marble work.</p>
+            <a href="https://artsandculture.google.com/story/taj-mahal-a-tour-from-the-top/zAUxtGbI2DyODQ"
+                target="_blank">Launch Exhibit & Tour ➡️</a>
+        </div>
+
+        <div class="monument-card">
+            <h3>Ajanta Caves, Maharashtra</h3>
+            <img src="https://www.adotrip.com/public/images/areas/5f04898f9a9dd-Ajanta%20Caves%20Tours.jpg"
+                alt="Ajanta Caves">
+            <p>Explore stunning ancient rock-cut Buddhist murals and sculptures dating back to the 2nd century BCE.</p>
+            <a href="https://www.google.com/culturalinstitute/asset-viewer/ajanta-caves/pQH62KxODVTBaw"
+                target="_blank">Launch Exhibit & Tour ➡️</a>
+        </div>
+
+        <div class="monument-card">
+            <h3>Hampi Ruins, Karnataka</h3>
+            <img src="https://tse2.mm.bing.net/th/id/OIP.yurcXJwWt5CgaAwqwV7PZgHaEP?rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="Hampi Ruins">
+            <p>Discover the magnificent remnants of the mighty Vijayanagara Empire amidst a mystical boulder-strewn
+                landscape.</p>
+            <a href="https://artsandculture.google.com/story/hampi-the-saga-of-a-lost-city-incredibleindia/PwVB2aUlJBbNLA"
+                target="_blank">Launch Exhibit & Tour ➡️</a>
+        </div>
+
+        <div class="monument-card">
+            <h3>Red Fort, Delhi</h3>
+            <img src="https://th.bing.com/th/id/OIP.8CWFuiZHSTpC3yzRWx0nuwHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="Red Fort">
+            <p>A historic fort in the city of Delhi that served as the main residence of the Mughal emperors.</p>
+            <a href="https://artsandculture.google.com/project/the-red-fort-complex" target="_blank">Launch Exhibit &
+                Tour ➡️</a>
+        </div>
+
+        <div class="monument-card">
+            <h3>Qutub Minar, Delhi</h3>
+            <img src="https://tse4.mm.bing.net/th/id/OIP.glGUV2zryCF2AV0Bmsp8TgAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="Qutub Minar">
+            <p>A towering minaret and UNESCO World Heritage Site, a symbol of Indo-Islamic architecture.</p>
+            <a href="https://artsandculture.google.com/story/qutub-minar/gQXl23nC_fLpKA?hl=en" target="_blank">Launch
+                Exhibit & Tour ➡️</a>
+        </div>
+
+        <div class="monument-card">
+            <h3>Gateway of India, Mumbai</h3>
+            <img src="https://wallpapercave.com/wp/wp5172696.jpg"
+                alt="Gateway of India">
+            <p>An iconic arch monument built in the early 20th century, overlooking the Mumbai harbour.</p>
+            <a href="https://artsandculture.google.com/story/gateway-of-india/wALCnE9G6Gz-1w?hl=en"
+                target="_blank">Launch Exhibit & Tour ➡️</a>
+        </div>
+
+    </div>
+      <footer>
+        <div class="bottom-nav">
+            <a href="index.html"><span role="img" aria-label="India Tours">🇮🇳</span> India Tours</a>
+            <a href="destinations.html"><span role="img" aria-label="International Tours">🌍</span> International Tours</a>
+            <a href="destination_wedding.html"><span role="img" aria-label="Destination Wedding">💍</span> Destination Wedding</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

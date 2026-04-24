@@ -25,6 +25,15 @@ This project is intended for **personal and educational purposes only**.
 It is not meant for cloning, redistribution, or commercial use.  
 Feel free to explore the documentation and features, but please respect the privacy of this repository.
 
+## 🌟 Project Vision
+
+The vision of **Tour My India Guide** is to become a **one-stop travel platform** that combines inspiration, planning, and booking into a seamless experience. By integrating cultural insights, modern technology, and personalized itineraries, the project aims to:  
+
+- Promote India’s heritage and tourism globally.  
+- Provide accessible travel planning tools for diverse audiences.  
+- Offer immersive experiences through virtual tours and interactive content.  
+- Continuously expand with new destinations, features, and smart travel solutions.  
+
  ## 📌 Roadmap
 
 - Add user authentication and profiles  
